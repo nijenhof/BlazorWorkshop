@@ -6,23 +6,27 @@
 <PageTitle>Create Weather forecast</PageTitle>
 <h1>Create Weather forecast</h1>
 
-<EditForm Model="NewForecast" OnSubmit="Save">
+<EditForm Model="NewForecast" OnValidSubmit="Save">
+    <DataAnnotationsValidator />
     <div class="form-group row py-2">
         <label for="forecast-date" class="col-sm-2 col-form-label">Date</label>
         <div class="col-sm-10">
             <InputDate @bind-Value="NewForecast.Date" id="forecast-date" class="form-control"></InputDate>
+            <ValidationMessage For="() => NewForecast.Date" />
         </div>
     </div>
     <div class="form-group row py-2">
         <label for="forecast-temp" class="col-sm-2 col-form-label">Temperature</label>
         <div class="col-sm-10">
             <InputNumber @bind-Value="NewForecast.TemperatureC" id="forecast-temp" class="form-control"></InputNumber>
+            <ValidationMessage For="() => NewForecast.TemperatureC" />
         </div>
     </div>
     <div class="form-group row py-2">
         <label for="forecast-summary" class="col-sm-2 col-form-label">Summary</label>
         <div class="col-sm-10">
             <InputText @bind-Value="NewForecast.Summary" id="forecast-summary" class="form-control"></InputText>
+            <ValidationMessage For="() => NewForecast.Summary" />
         </div>
     </div>
     <button class="btn btn-primary" type="submit">Submit</button>
