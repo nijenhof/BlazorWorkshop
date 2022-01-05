@@ -1,9 +1,9 @@
 ﻿@page "/fetchdata"
+@using BlazorWorkshop.Client.Services.Interfaces
 @using BlazorWorkshop.Shared
-@inject HttpClient Http
+@inject IWeatherForecastService forecastService
 
 <PageTitle>Weather forecast</PageTitle>
-
 <h1>Weather forecast</h1>
 
 <p>This component demonstrates fetching data from the server.</p>
@@ -36,12 +36,12 @@ else
         </tbody>
     </table>
 }
-
 @code {
-    private WeatherForecast[]? forecasts;
+    private IEnumerable<WeatherForecast>? forecasts;
 
     protected override async Task OnInitializedAsync()
     {
-        forecasts = await Http.GetFromJsonAsync<WeatherForecast[]>("WeatherForecast");
+        forecasts = await forecastService.GetAll();
     }
 }
+S
