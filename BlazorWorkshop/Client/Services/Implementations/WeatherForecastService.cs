@@ -27,5 +27,17 @@ namespace BlazorWorkshop.Client.Services.Implementations
             }
             return result;
         }
+
+        public async Task<PaginatedResponse<WeatherForecast>> GetPaginated(int page, int pageSize)
+        {
+            string requestUri = $"WeatherForecast?page={page}&pageSize={pageSize}";
+            var result = await _httpClient.GetFromJsonAsync<PaginatedResponse<WeatherForecast>>(requestUri);
+
+            if (result == null)
+            {
+                return new PaginatedResponse<WeatherForecast>(0, 0, 0, new());
+            }
+            return result;
+        }
     }
 }

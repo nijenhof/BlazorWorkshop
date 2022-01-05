@@ -35,12 +35,45 @@ else
             }
         </tbody>
     </table>
+    <nav aria-label="WeatherForecast pagination">
+        <ul class="pagination">
+            <li class="page-item"><a @onclick="Previous" class="page-link">Previous</a></li>
+            <li class="page-item"><a @onclick="Next" class="page-link">Next</a></li>
+        </ul>
+    </nav>
 }
 @code {
+    private int _pageSize = 10;
+    private int _currentPage = 1;
+
     private IEnumerable<WeatherForecast>? forecasts;
 
     protected override async Task OnInitializedAsync()
     {
-        forecasts = await forecastService.GetAll();
+        forecasts = (await forecastService.GetPaginated(_currentPage, _pageSize)).Items;
+    }
+
+    private async Task Next()
+    {
+        _currentPage++;
+        await FetchDataByPagination();
+    }
+
+    private async Task Previous()
+    {
+        if(_currentPage > 0)
+        { 
+            _currentPage--;
+            await FetchDataByPagination();
+        }
+    }
+
+    private async Task FetchDataByPagination()
+    {
+        forecasts = null;
+        
+        var paginatedResponse = await forecastService.GetPaginated(_currentPage, _pageSize);
+
+        forecasts = paginatedResponse.Items;
     }
 }
