@@ -1,13 +1,38 @@
 ﻿@page "/createforecast"
+@using BlazorWorkshop.Client.Services.Interfaces
 @using BlazorWorkshop.Shared
+@inject IWeatherForecastService forecastService
 
 <PageTitle>Create Weather forecast</PageTitle>
 <h1>Create Weather forecast</h1>
 
-<EditForm Model="NewForecast">
-
+<EditForm Model="NewForecast" OnSubmit="Save">
+    <div class="form-group row py-2">
+        <label for="forecast-date" class="col-sm-2 col-form-label">Date</label>
+        <div class="col-sm-10">
+            <InputDate @bind-Value="NewForecast.Date" id="forecast-date" class="form-control"></InputDate>
+        </div>
+    </div>
+    <div class="form-group row py-2">
+        <label for="forecast-temp" class="col-sm-2 col-form-label">Temperature</label>
+        <div class="col-sm-10">
+            <InputNumber @bind-Value="NewForecast.TemperatureC" id="forecast-temp" class="form-control"></InputNumber>
+        </div>
+    </div>
+    <div class="form-group row py-2">
+        <label for="forecast-summary" class="col-sm-2 col-form-label">Summary</label>
+        <div class="col-sm-10">
+            <InputText @bind-Value="NewForecast.Summary" id="forecast-summary" class="form-control"></InputText>
+        </div>
+    </div>
+    <button class="btn btn-primary" type="submit">Submit</button>
 </EditForm>
 
 @code {
     public WeatherForecast NewForecast { get; set; } = new();
+
+    private async Task Save()
+    {
+        await forecastService.AddForecast(NewForecast);
+    }
 }
