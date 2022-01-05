@@ -8,9 +8,11 @@ namespace BlazorWorkshop.Shared
         public int Id { get; set; }
 
         [Required]
+        [GteToday(ErrorMessage = "Date must be after or equal to today")]
         public DateTime Date { get; set; }
 
         [Required]
+        [Range(-100, 100)]
         public int TemperatureC { get; set; }
 
         [Required]
