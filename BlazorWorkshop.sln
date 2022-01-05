@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorWorkshop.Server", "BlazorWorkshop\Server\BlazorWorkshop.Server.csproj", "{B47DFB45-0B70-4BC6-A3E1-167C0DF1DA3B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorWorkshop.Server", "BlazorWorkshop\Server\BlazorWorkshop.Server.csproj", "{B47DFB45-0B70-4BC6-A3E1-167C0DF1DA3B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorWorkshop.Client", "BlazorWorkshop\Client\BlazorWorkshop.Client.csproj", "{1FEC8E3E-9A8D-461D-94C5-5B94644F2B3E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorWorkshop.Client", "BlazorWorkshop\Client\BlazorWorkshop.Client.csproj", "{1FEC8E3E-9A8D-461D-94C5-5B94644F2B3E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorWorkshop.Shared", "BlazorWorkshop\Shared\BlazorWorkshop.Shared.csproj", "{00B42F12-05E6-4735-9BEB-E1EAF70AD832}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorWorkshop.Shared", "BlazorWorkshop\Shared\BlazorWorkshop.Shared.csproj", "{00B42F12-05E6-4735-9BEB-E1EAF70AD832}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorWorkshop.Data", "BlazorWorkshop.Data\BlazorWorkshop.Data.csproj", "{18705910-73FF-4580-9E82-E2B983C79B5C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorWorkshop.Data", "BlazorWorkshop.Data\BlazorWorkshop.Data.csproj", "{18705910-73FF-4580-9E82-E2B983C79B5C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

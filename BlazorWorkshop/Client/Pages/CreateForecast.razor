@@ -1,0 +1,13 @@
+﻿@page "/createforecast"
+@using BlazorWorkshop.Shared
+
+<PageTitle>Create Weather forecast</PageTitle>
+<h1>Create Weather forecast</h1>
+
+<EditForm Model="NewForecast">
+
+</EditForm>
+
+@code {
+    public WeatherForecast NewForecast { get; set; } = new();
+}
