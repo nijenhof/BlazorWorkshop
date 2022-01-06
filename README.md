@@ -5,7 +5,7 @@ Op deze repository kan je de uitwerking van de opdracht vinden. Voor elke opdrac
 Deze worden in de opdracht gerevereerd en kan je gebruiken om te verifiëren of je nog goed zit qua uitwerking.
 
 De volgorde van de opdrachten en checkpoints is als volgt:
-|## Branch   |## Omschrijving   |
+| Branch   | Omschrijving   |
 |---|---|
 | [Initial](https://github.com/nijenhof/BlazorWorkshop) | Het begin van de workshop.   |
 | [beginner/checkpoint-1](https://github.com/nijenhof/BlazorWorkshop/tree/beginner/checkpoint-1)  | WeatherForecastService aangemaakt    |
